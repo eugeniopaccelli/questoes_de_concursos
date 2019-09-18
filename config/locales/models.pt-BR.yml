@@ -1,9 +1,9 @@
 pt-BR:
   activerecord:
     models:
-      profile: 
-        one: Perfil
-        other: Perfils
+      user: 
+        one: Usuário
+        other: Usuários
       admin: 
         one: Administrador
         other: Administradores
@@ -12,7 +12,7 @@ pt-BR:
         email: Email
         created_at: Criado em
         updated_at: Atualizado em
-      profile:
+      user:
        email: Email
        created_at: Criado em
        updated_at: Atualizado em
