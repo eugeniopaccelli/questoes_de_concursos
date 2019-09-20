@@ -1,5 +1,9 @@
 {
   "name": "questoes_de_concursos",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eugênio Oliveira <eugenio.p.oliveira@outlook.com>",
+  "license": "MIT"
 }
