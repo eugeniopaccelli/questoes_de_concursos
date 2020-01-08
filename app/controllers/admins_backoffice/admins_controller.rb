@@ -6,6 +6,20 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def index
     @admins = Admin.all
   end
+
+  def new
+    @admin = Admin.new
+  end
+
+  def create
+    @admin = Admin.create(admin_params)
+    if(@admin.save)
+      redirect_to admins_backoffice_admins_path, notice: "Dados cadastrados com sucesso."
+    else
+      render :new
+    end
+  end
+
   def edit
     
   end

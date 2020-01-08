@@ -9,7 +9,13 @@
       <tr>
         <th>#</th>
         <th>Email</th>        
-        <th>Ações</th>        
+        <th>
+        <%= link_to new_admins_backoffice_admin_path do %>
+              <button type="button" class="btn btn-success btn-circle">
+                <i class="fa fa-plus"></i>
+               </button>
+            <% end %>
+        </th>        
       </tr>
     </thead>
     <tbody>
