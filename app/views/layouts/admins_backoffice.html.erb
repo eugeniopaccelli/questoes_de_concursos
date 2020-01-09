@@ -106,7 +106,8 @@
         <div id="page-wrapper">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-lg-12"> 
+              <div class="col-lg-12">
+              <%= "você está na action: #{action_name}" %> 
                 <%= yield %>
               </div>
               <!-- /.col-lg-12 -->
@@ -121,18 +122,19 @@
       <!-- /#wrapper -->
       <%= javascript_include_tag 'application' %>
       <%= javascript_include_tag 'admins_backoffice' %>
-      <!-- jQuery -->
-      <script src="../vendor/jquery/jquery.min.js"></script>
-
-      <!-- Bootstrap Core JavaScript -->
-      <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-      <!-- Metis Menu Plugin JavaScript -->
-      <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-      <!-- Custom Theme JavaScript -->
-      <script src="../dist/js/sb-admin-2.js"></script>
-
+      <% if(notice) %>
+        <script>
+          $.bootstrapGrowl('<%= notice %>', {
+          ele: 'body', // which element to append to
+          type: 'success', // (null, 'info', 'danger', 'success')
+          offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+          align: 'right', // ('left', 'right', or 'center')        
+          allow_dismiss: true, // If true then will display a cross to close the popup.
+          stackup_spacing: 10 // spacing between consecutively stacked growls.
+        });
+        </script>
+      <% end %>
+     
     </body>
 
     </html>
