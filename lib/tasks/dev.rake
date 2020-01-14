@@ -13,6 +13,7 @@ namespace :dev do
       show_spinner("Adding Test Admins...") { %x(rails dev:add_extra_admins) }
       show_spinner("Adding Default User...") { %x(rails dev:add_default_user) }
       show_spinner("Adding Default Subjects...") { %x(rails dev:add_subjects) }
+      show_spinner("Adding Some Questions And Answers...") { %x(rails dev:add_answers_and_questions) }
       # %x(rails dev:add_mining_types)      
     else
       puts "You are not in development mode, this action is forbidden."
@@ -58,6 +59,17 @@ namespace :dev do
     end
   end
 
+  desc "Adiciona Questões e Respostas"
+    task add_answers_and_questions: :environment do
+    Subject.all.each do |subject|
+      rand(5..10).times do |i|
+      Question.create!(
+      description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+      subject: subject
+      )
+      end
+    end
+  end
 
   private
   def show_spinner(start_msg, end_msg = "Done!")
