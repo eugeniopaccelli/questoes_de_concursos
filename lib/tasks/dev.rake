@@ -1,6 +1,7 @@
 namespace :dev do
 
   DEFAULT_PASSWORD = 123456
+  DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
   
   desc "It configures the development environment."
   task setup: :environment do
@@ -11,6 +12,7 @@ namespace :dev do
       show_spinner("Adding Default Admin...") { %x(rails dev:add_default_admin) }
       show_spinner("Adding Test Admins...") { %x(rails dev:add_extra_admins) }
       show_spinner("Adding Default User...") { %x(rails dev:add_default_user) }
+      show_spinner("Adding Default Subjects...") { %x(rails dev:add_subjects) }
       # %x(rails dev:add_mining_types)      
     else
       puts "You are not in development mode, this action is forbidden."
@@ -45,6 +47,17 @@ namespace :dev do
     password_confirmation: DEFAULT_PASSWORD,
     ) 
   end
+
+  desc "Adiciona Os Assuntos Padrão"
+    task add_subjects: :environment do
+    file_name = 'subjects.txt'
+    file_path = File.join(DEFAULT_FILES_PATH, file_name)
+  
+    File.open(file_path, 'r').each do |line|
+    Subject.create!(description: line.strip)
+    end
+  end
+
 
   private
   def show_spinner(start_msg, end_msg = "Done!")
