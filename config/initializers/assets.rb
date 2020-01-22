@@ -25,3 +25,6 @@ Rails.application.config.assets.precompile += %w( admin_devise.js admin_devise.c
 
 # User Assets
 Rails.application.config.assets.precompile += %w( user_devise.js user_devise.css )
+
+# Site Assets
+Rails.application.config.assets.precompile += %w( site.js site.css surface-fix.js surface-fix.css navbar.css )
