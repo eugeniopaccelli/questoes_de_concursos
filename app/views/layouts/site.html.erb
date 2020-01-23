@@ -70,14 +70,7 @@
             <!--/.container-fluid -->
         </nav>
         <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron">        
-            <% unless params[:term] %>
-            <h1>Últimas Perguntas Cadastradas</h1>
-            <% else %>
-            <h3>Resultados encontradados para o termo: <b><%= params[:term] %></b></h3>
-            <% end %>
-
-        </div>
+        
         <%= yield %>
 
     </div>
