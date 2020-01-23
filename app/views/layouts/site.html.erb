@@ -70,24 +70,13 @@
             <!--/.container-fluid -->
         </nav>
         <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron">
-        <h1>Site::Welcome#index</h1>
-<p>Find me in app/views/site/welcome/index.html.erb</p>
+        <div class="jumbotron">        
+            <% unless params[:term] %>
+            <h1>Últimas Perguntas Cadastradas</h1>
+            <% else %>
+            <h3>Resultados encontradados para o termo: <b><%= params[:term] %></b></h3>
+            <% end %>
 
-<% if user_signed_in? %>
-  <p>Usuário Logado / <%= current_user.email %></p>
-  
-<% else %>
-  <p>Usuário Não Logado</p>
-<% end %>
-
-<% if admin_signed_in? %>
-  <p>Admin Logado - <%= current_admin.email %></p>
-  
-<% else %>
-  <p>Admin Não Logado</p>
-<% end %>
-            
         </div>
         <%= yield %>
 
