@@ -13,4 +13,8 @@ class Question < ApplicationRecord
   scope :last_questions, ->(page) {
           Question.includes(:answers).order("created_at desc").page(page).per(5)
         }
+
+  scope :_search_subject, ->(page, subject) {
+          Question.includes(:answers, :subject).where(subject_id: subject).page(page)
+        }
 end
