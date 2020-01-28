@@ -1,13 +1,12 @@
 <div class="nested-fields">
-    <div class="row">
-        <div class="col-md-8">
-            <%= f.label :description %><br />
-            <%= f.text_field :description, class: "form-control" %><br />
-            <%= f.check_box :correct %> Correta? &nbsp;&nbsp;
-            <%= link_to_remove_association 'Remover', f, class: "btn btn-danger" %>
-        </div>
-        <div class="col-md-4">
-            
-        </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.label :description %><br />
+      <%= f.text_field :description, class: "form-control" %><br />
+      <%= f.check_box :correct %> Correta? &nbsp;&nbsp;
+      <%= link_to_remove_association 'Remover', f, class: "btn btn-danger" %>
     </div>
+    <div class="col-md-4">
+    </div>
+  </div>
 </div>
