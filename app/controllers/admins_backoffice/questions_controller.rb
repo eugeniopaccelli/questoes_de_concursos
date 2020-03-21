@@ -1,4 +1,5 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
+ 
   before_action :set_question, only: [:edit, :update, :destroy]
   before_action :get_subjects, only: [:new, :edit]
 
