@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   private
 
+  #statistcs
   def set_statistic
     AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users])
   end
