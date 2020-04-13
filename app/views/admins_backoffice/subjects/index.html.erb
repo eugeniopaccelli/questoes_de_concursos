@@ -8,14 +8,20 @@
     <thead>
       <tr>
         <th>#</th>
-        <th><%= translate_attribute(@subjects, :description) %></th>        
+        <th><%= translate_attribute(@subjects, :description) %></th>
         <th>
         <%= link_to new_admins_backoffice_subject_path do %>
               <button type="button" class="btn btn-success btn-circle">
                 <i class="fa fa-plus"></i>
                </button>
             <% end %>
-        </th>        
+
+            <%= link_to admins_backoffice_subjects_path(format: :pdf) do %>
+              <button type="button" class="btn btn-danger btn-circle">
+                <i class="fa fa-file-pdf-o"></i>
+               </button>
+            <% end %>
+        </th>
       </tr>
     </thead>
     <tbody>
