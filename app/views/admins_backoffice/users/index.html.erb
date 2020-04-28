@@ -24,6 +24,12 @@
           <td><%= user.id %></td>
           <td><%= user.email %></td>        
           <td style="width: 100px;">
+
+          <%= link_to "edit_admins_backoffice_user_path(user)" do %>
+              <button type="button" class="btn btn-warning btn-circle">
+                <i class="fa fa-edit"></i>
+               </button>
+            <% end %>
             <%= link_to "edit_admins_backoffice_user_path(user)" do %>
               <button type="button" class="btn btn-primary btn-circle">
                 <i class="fa fa-edit"></i>
