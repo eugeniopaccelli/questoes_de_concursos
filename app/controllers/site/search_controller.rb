@@ -1,6 +1,6 @@
 class Site::SearchController < SiteController
   def questions
-    @questions = Question._search(params[:page], params[:term])
+    @questions = Question.search(params[:term])
   end
 
   def subject
