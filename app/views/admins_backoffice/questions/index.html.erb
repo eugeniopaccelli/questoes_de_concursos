@@ -23,7 +23,7 @@
       <% @questions.each do |question| %>
         <tr>
           <td><%= question.id %></td>
-          <td><%= question.description.truncate(70) %></td>   
+          <td><%= sanitize(question.description.truncate(70)) %></td>   
           <td><%= question.subject.description.truncate(50) %></td>      
           <td style="width: 100px;">
             <%= link_to edit_admins_backoffice_question_path(question) do %>
